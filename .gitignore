@@ -16,3 +16,7 @@ vite-dev.log
 vite-dev.err.log
 next-start.log
 next-start.err.log
+next-dev.log
+next-dev.err.log
+next-dev-*.log
+next-dev-*.err.log

@@ -94,7 +94,7 @@ export default function Home() {
     [connectors]
   );
   useEffect(() => {
-    setClaimed(window.localStorage.getItem('trustdrop:starter-reward') === 'claimed');
+    setClaimed(window.localStorage.getItem('trustscore:starter-signal') === 'claimed');
   }, []);
 
   useEffect(() => {
@@ -119,7 +119,7 @@ export default function Home() {
 
   const starterReward = claimed ? 120 : isConnected ? 100 : 0;
   const totalSignal = starterReward + Number(myScore || 0n) * 25 + Number(myGivenCount || 0n) * 10;
-  const primaryLabel = isConnected ? (claimed ? 'Reward Claimed' : 'Claim Starter Reward') : 'Connect Wallet';
+  const primaryLabel = isConnected ? (claimed ? 'Trust Signal Claimed' : 'Reveal Trust Signal') : 'Connect Wallet';
 
   function handlePrimaryAction() {
     if (!isConnected) {
@@ -127,9 +127,9 @@ export default function Home() {
       return;
     }
 
-    window.localStorage.setItem('trustdrop:starter-reward', 'claimed');
+    window.localStorage.setItem('trustscore:starter-signal', 'claimed');
     setClaimed(true);
-    setStatus('Starter reward unlocked instantly.');
+    setStatus('Starter trust signal unlocked instantly.');
   }
 
   function handleTrustReward() {
@@ -177,8 +177,8 @@ export default function Home() {
             <Gift size={21} />
           </div>
           <div>
-            <p className="text-lg font-black leading-tight">TrustDrop</p>
-            <p className="text-xs font-semibold text-stone-500">Instant rewards on Base</p>
+            <p className="text-lg font-black leading-tight">TrustScore</p>
+            <p className="text-xs font-semibold text-stone-500">Onchain reputation on Base</p>
           </div>
         </div>
 
@@ -212,17 +212,17 @@ export default function Home() {
         <div className="space-y-5">
           <div className="inline-flex items-center gap-2 rounded-lg border border-orange-200 bg-white/80 px-3 py-2 text-sm font-bold text-ember">
             <Sparkles size={16} />
-            No token purchase required
+            Social reputation / Onchain identity score
           </div>
 
           <div className="space-y-4">
-            <h1 className="text-4xl font-black leading-[1.04] text-cocoa sm:text-5xl lg:text-6xl">TrustDrop</h1>
+            <h1 className="text-4xl font-black leading-[1.04] text-cocoa sm:text-5xl lg:text-6xl">TrustScore</h1>
             <p className="max-w-2xl text-xl font-bold leading-8 text-stone-700 sm:text-2xl">
-              Claim a warm starter reward the moment your wallet joins.
+              Show wallet credibility through lightweight Base trust records.
             </p>
             <p className="max-w-xl text-base leading-7 text-stone-600">
-              Connect Coinbase Wallet, MetaMask, OKX, or the Base App embedded wallet. Your first action unlocks a
-              visible reward score immediately.
+              Give trust points to wallets that contribute, help, or earn community recognition. Your first interaction
+              reveals a visible reputation signal without buying any token.
             </p>
           </div>
 
@@ -232,16 +232,16 @@ export default function Home() {
           </button>
 
           <div className="grid grid-cols-3 gap-2 sm:max-w-xl">
-            <MiniStat label="Starter" value={`${starterReward}`} />
+            <MiniStat label="Signal" value={`${starterReward}`} />
             <MiniStat label="Trust" value={`${myScore || 0n}`} />
-            <MiniStat label="Total" value={`${totalSignal}`} />
+            <MiniStat label="Score" value={`${totalSignal}`} />
           </div>
         </div>
 
         <div className="card p-5 sm:p-6">
           <div className="flex items-start justify-between gap-4">
             <div>
-              <p className="label">Reward Balance</p>
+              <p className="label">Identity Score</p>
               <p className="mt-2 text-5xl font-black text-cocoa">{totalSignal}</p>
             </div>
             <div className="flex h-14 w-14 items-center justify-center rounded-lg bg-orange-100 text-ember">
@@ -251,7 +251,7 @@ export default function Home() {
 
           <div className="mt-5 rounded-lg bg-cream p-4">
             <div className="flex items-center justify-between gap-3">
-              <span className="font-bold text-cocoa">Starter reward</span>
+              <span className="font-bold text-cocoa">Starter trust signal</span>
               <span className="rounded-lg bg-white px-3 py-1 text-sm font-black text-mint">
                 {claimed ? 'Unlocked' : 'Ready'}
               </span>
@@ -269,7 +269,7 @@ export default function Home() {
           <div className="mt-5 border-t border-orange-100 pt-5">
             <div className="mb-3 flex items-center gap-2 text-cocoa">
               <HeartHandshake size={18} />
-              <h2 className="font-black">Send Onchain Trust</h2>
+              <h2 className="font-black">Add Trust Score</h2>
             </div>
             <div className="space-y-3">
               <input
@@ -286,7 +286,7 @@ export default function Home() {
                 onClick={handleTrustReward}
               >
                 {isPending || isConfirming ? <Loader2 className="animate-spin" size={16} /> : <HeartHandshake size={16} />}
-                {wrongNetwork ? `Switch to ${expectedChain.name}` : 'Send Trust +1'}
+                {wrongNetwork ? `Switch to ${expectedChain.name}` : 'Add Trust +1'}
               </button>
             </div>
           </div>

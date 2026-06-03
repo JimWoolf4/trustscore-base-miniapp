@@ -5,8 +5,8 @@ import './globals.css';
 import { Providers } from './providers';
 
 export const metadata: Metadata = {
-  title: 'TrustDrop',
-  description: 'A zero-cost Base miniapp that gives instant trust rewards.'
+  title: 'TrustScore',
+  description: 'A lightweight Base miniapp for social reputation, onchain credibility, and wallet identity scoring.'
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {

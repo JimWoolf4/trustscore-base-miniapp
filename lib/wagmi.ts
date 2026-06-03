@@ -10,11 +10,12 @@ export const chains = [base, baseSepolia] as const;
 export const wagmiConfig = createConfig({
   chains,
   ssr: true,
+  dataSuffix: builderCodeDataSuffix,
   multiInjectedProviderDiscovery: true,
   connectors: [
     injected({ shimDisconnect: true }),
     coinbaseWallet({
-      appName: 'TrustDrop',
+      appName: 'TrustScore',
       preference: 'all'
     })
   ],
@@ -22,4 +23,4 @@ export const wagmiConfig = createConfig({
     [base.id]: http(),
     [baseSepolia.id]: http()
   }
-});
+} as Parameters<typeof createConfig>[0] & { dataSuffix: `0x${string}` });

@@ -1,6 +1,8 @@
-# TrustDrop
+# TrustScore
 
-TrustDrop is a Base miniapp with a warm, mobile-first reward flow. Users do not need to buy a token to participate: the first wallet interaction unlocks an instant visible starter reward, and optional onchain trust rewards can be sent through Wagmi and Viem.
+TrustScore is a lightweight Base miniapp for social reputation, onchain credibility, and wallet identity scoring. Users can add trust points to other wallet addresses, making onchain records that display credibility, contribution, and community recognition.
+
+Users do not need to buy a token to participate: the first wallet interaction reveals an instant visible trust signal, and optional onchain trust scoring is handled through Wagmi and Viem.
 
 ## Stack
 
@@ -10,6 +12,13 @@ TrustDrop is a Base miniapp with a warm, mobile-first reward flow. Users do not 
 - Viem
 - Tailwind CSS
 - Hardhat contract tooling
+
+## Miniapp Type
+
+- Social reputation
+- Onchain reputation
+- Identity scoring
+- Contract category: onchain reputation score contract
 
 ## Wallets
 
@@ -24,7 +33,7 @@ Wallet connection is configured in `lib/wagmi.ts` with:
 
 Offchain attribution:
 
-- Set the verified Base App token in `app/layout.tsx`
+- Set the verified Base App token in `app/layout.tsx` after base.dev verification
 - The tag is hardcoded directly in `<head>`:
 
 ```tsx
@@ -34,6 +43,7 @@ Offchain attribution:
 Onchain attribution:
 
 - Set the ERC-8021 builder code in `lib/wagmi.ts`
+- The Wagmi config keeps a hardcoded `dataSuffix` field for the builder code
 
 ```ts
 export const builderCodeDataSuffix = '0x' as `0x${string}`;

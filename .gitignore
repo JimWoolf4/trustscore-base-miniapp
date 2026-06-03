@@ -20,3 +20,5 @@ next-dev.log
 next-dev.err.log
 next-dev-*.log
 next-dev-*.err.log
+
+.vercel

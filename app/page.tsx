@@ -9,6 +9,7 @@ import {
   HeartHandshake,
   Loader2,
   LogOut,
+  ShieldCheck,
   Sparkles,
   Wallet
 } from 'lucide-react';
@@ -89,6 +90,20 @@ export default function Home() {
     query: { enabled: hasContractAddress && isConnected && validTarget }
   });
 
+  const { data: targetScore, refetch: refetchTargetScore } = useReadContract({
+    ...contractBase,
+    functionName: 'getTrustScore',
+    args: [validTarget ? parsedTarget : zeroAddress],
+    query: { enabled: hasContractAddress && validTarget }
+  });
+
+  const { data: targetGivenCount } = useReadContract({
+    ...contractBase,
+    functionName: 'getGivenTrustCount',
+    args: [validTarget ? parsedTarget : zeroAddress],
+    query: { enabled: hasContractAddress && validTarget }
+  });
+
   const injectedConnector = useMemo(
     () => connectors.find((item) => item.type === 'injected') || connectors[0],
     [connectors]
@@ -108,7 +123,8 @@ export default function Home() {
     refetchMyScore();
     refetchMyGiven();
     refetchTargetTrusted();
-  }, [isSuccess, refetchMyGiven, refetchMyScore, refetchTargetTrusted]);
+    refetchTargetScore();
+  }, [isSuccess, refetchMyGiven, refetchMyScore, refetchTargetScore, refetchTargetTrusted]);
 
   useEffect(() => {
     const userAgent = window.navigator.userAgent.toLowerCase();
@@ -280,14 +296,23 @@ export default function Home() {
               />
               {targetAddress && !validTarget && <p className="helper-error">Enter a valid EVM wallet address.</p>}
               {isSelfReward && <p className="helper-error">Choose another wallet to reward.</p>}
+              <div className="grid grid-cols-2 gap-2">
+                <InfoTile icon={<ShieldCheck size={18} />} label="Target score" value={validTarget ? `${targetScore || 0n}` : 'Enter wallet'} />
+                <InfoTile icon={<HeartHandshake size={18} />} label="Target given" value={validTarget ? `${targetGivenCount || 0n}` : 'Enter wallet'} />
+              </div>
+              <div className="rounded-lg border border-orange-100 bg-orange-50/70 p-3 text-sm font-semibold leading-6 text-stone-700">
+                This button writes to the TrustScore contract on Base. Each wallet can add one trust point to the same
+                target address.
+              </div>
               <button
-                className="secondary-button w-full"
-                disabled={isPending || isConfirming || Boolean(targetAlreadyTrusted)}
+                className="primary-button"
+                disabled={isPending || isConfirming || Boolean(targetAlreadyTrusted) || Boolean(targetAddress && (!validTarget || isSelfReward))}
                 onClick={handleTrustReward}
               >
                 {isPending || isConfirming ? <Loader2 className="animate-spin" size={16} /> : <HeartHandshake size={16} />}
                 {wrongNetwork ? `Switch to ${expectedChain.name}` : 'Add Trust +1'}
               </button>
+              {targetAlreadyTrusted && <p className="helper-success">You already added trust to this wallet.</p>}
             </div>
           </div>
 

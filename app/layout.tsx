@@ -13,7 +13,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <head>
-        <meta name="base:app_id" content="" />
+        <meta name="base:app_id" content="6a1fe0454fbf682eb25dc0c5" />
       </head>
       <body>
         <Providers>{children}</Providers>

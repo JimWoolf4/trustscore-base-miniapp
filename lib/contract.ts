@@ -1,6 +1,8 @@
 import type { Address } from 'viem';
 import { zeroAddress } from 'viem';
 
+const defaultContractAddress = '0x15AE3f62d9e3AfF88BD667858cC60Fe68D9F1D55' as const;
+
 export const trustScoreAbi = [
   {
     type: 'function',
@@ -51,6 +53,6 @@ export const trustScoreAbi = [
   }
 ] as const;
 
-export const contractAddress = (process.env.NEXT_PUBLIC_CONTRACT_ADDRESS || zeroAddress) as Address;
+export const contractAddress = (process.env.NEXT_PUBLIC_CONTRACT_ADDRESS || defaultContractAddress) as Address;
 export const configuredChainId = Number(process.env.NEXT_PUBLIC_CHAIN_ID || 84532);
 export const hasContractAddress = contractAddress !== zeroAddress;

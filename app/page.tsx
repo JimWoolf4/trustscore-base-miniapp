@@ -5,6 +5,7 @@ import {
   CheckCircle2,
   ChevronDown,
   ExternalLink,
+  FileCode2,
   Gift,
   HeartHandshake,
   Loader2,
@@ -288,6 +289,7 @@ export default function Home() {
               <h2 className="font-black">Add Trust Score</h2>
             </div>
             <div className="space-y-3">
+              <ContractEmbed chainName={expectedChain.name} />
               <input
                 className="input"
                 placeholder="0x wallet address"
@@ -415,7 +417,49 @@ function InfoTile({ icon, label, value }: { icon: React.ReactNode; label: string
   );
 }
 
+function ContractEmbed({ chainName }: { chainName: string }) {
+  return (
+    <div className="rounded-lg border border-orange-200 bg-white p-4">
+      <div className="flex items-start gap-3">
+        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-orange-100 text-ember">
+          <FileCode2 size={20} />
+        </div>
+        <div className="min-w-0 flex-1">
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <p className="text-sm font-black text-cocoa">Embedded TrustScore Contract</p>
+            <span className="rounded-lg bg-cream px-2.5 py-1 text-xs font-black text-ember">{chainName}</span>
+          </div>
+          <p className="mt-2 break-all font-mono text-xs font-semibold text-stone-600">{contractAddress}</p>
+          <div className="mt-3 grid gap-2 sm:grid-cols-2">
+            <div className="rounded-lg bg-orange-50 px-3 py-2">
+              <p className="text-[11px] font-black uppercase text-stone-500">Read functions</p>
+              <p className="mt-1 text-xs font-bold text-cocoa">getTrustScore, hasUserTrusted</p>
+            </div>
+            <div className="rounded-lg bg-orange-50 px-3 py-2">
+              <p className="text-[11px] font-black uppercase text-stone-500">Write function</p>
+              <p className="mt-1 text-xs font-bold text-cocoa">giveTrust(address)</p>
+            </div>
+          </div>
+          <a
+            className="mt-3 inline-flex items-center gap-2 text-xs font-black text-base"
+            href={explorerContract()}
+            target="_blank"
+            rel="noreferrer"
+          >
+            View contract <ExternalLink size={13} />
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function explorerTx(hash: string) {
   const baseUrl = configuredChainId === 8453 ? 'https://basescan.org' : 'https://sepolia.basescan.org';
   return `${baseUrl}/tx/${hash}`;
+}
+
+function explorerContract() {
+  const baseUrl = configuredChainId === 8453 ? 'https://basescan.org' : 'https://sepolia.basescan.org';
+  return `${baseUrl}/address/${contractAddress}`;
 }

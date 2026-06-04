@@ -66,7 +66,7 @@ NEXT_PUBLIC_CONTRACT_ADDRESS=0xYourDeployedContract
 NEXT_PUBLIC_CHAIN_ID=84532
 ```
 
-Use `84532` for Base Sepolia and `8453` for Base mainnet.
+Use `8453` for Base mainnet. The configured TrustScore contract address is deployed on Base mainnet.
 
 ## Local Development
 

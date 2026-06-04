@@ -54,5 +54,5 @@ export const trustScoreAbi = [
 ] as const;
 
 export const contractAddress = (process.env.NEXT_PUBLIC_CONTRACT_ADDRESS || defaultContractAddress) as Address;
-export const configuredChainId = Number(process.env.NEXT_PUBLIC_CHAIN_ID || 84532);
+export const configuredChainId = Number(process.env.NEXT_PUBLIC_CHAIN_ID || 8453);
 export const hasContractAddress = contractAddress !== zeroAddress;

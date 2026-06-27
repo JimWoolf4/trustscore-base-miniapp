@@ -20,3 +20,10 @@ The project is designed to provide an immediate visible trust signal through wal
 - Viem-based contract interaction support
 - Tailwind CSS styling
 - Hardhat tooling for contract compilation and deployment
+
+## Stack
+
+- Next.js App Router
+- TypeScript
+- Wagmi native config
+- Viem

@@ -130,3 +130,11 @@ npm run compile
 Deploy to Base Sepolia:
 
 ```bash
+npm run deploy:base-sepolia
+```
+
+After deployment, update `NEXT_PUBLIC_CONTRACT_ADDRESS` in `.env.local`.
+
+Then rebuild and redeploy the frontend so the app points to the latest contract.
+
+## Project Notes

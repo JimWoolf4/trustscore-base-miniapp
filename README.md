@@ -42,3 +42,10 @@ The project is designed to provide an immediate visible trust signal through wal
 The app does not use RainbowKit, WalletConnect, or `getDefaultConfig`.
 
 Wallet connection is configured in `lib/wagmi.ts`.
+
+Supported connection options include:
+
+- `injected()` for the Base App embedded wallet, MetaMask, OKX, and other injected wallets
+- `coinbaseWallet()` for Coinbase Wallet
+
+## Base App Attribution

@@ -71,3 +71,11 @@ Every `writeContract` call should include the configured suffix:
 ```ts
 dataSuffix: builderCodeDataSuffix
 ```
+
+## Environment Setup
+
+Create a local environment file from the example file:
+
+```bash
+cp .env.example .env.local
+```

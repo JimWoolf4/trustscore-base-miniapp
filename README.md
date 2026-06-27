@@ -108,3 +108,11 @@ npm run dev
 ```
 
 Open the local app in your browser using the URL printed by Next.js.
+
+## Build
+
+Create a production build:
+
+```bash
+npm run build
+```

@@ -57,3 +57,10 @@ After verification on base.dev, set the verified Base App identifier in the `<he
 ```tsx
 <meta name="base:app_id" content="" />
 ```
+
+Onchain attribution is configured in `lib/wagmi.ts`.
+
+The Wagmi config includes a hardcoded `dataSuffix` field for the ERC-8021 builder code:
+
+```ts
+export const builderCodeDataSuffix = '0x' as `0x${string}`;

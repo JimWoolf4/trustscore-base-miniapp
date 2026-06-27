@@ -49,3 +49,11 @@ Supported connection options include:
 - `coinbaseWallet()` for Coinbase Wallet
 
 ## Base App Attribution
+
+Offchain attribution is configured in `app/layout.tsx`.
+
+After verification on base.dev, set the verified Base App identifier in the `<head>` metadata:
+
+```tsx
+<meta name="base:app_id" content="" />
+```

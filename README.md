@@ -27,3 +27,11 @@ The project is designed to provide an immediate visible trust signal through wal
 - TypeScript
 - Wagmi native config
 - Viem
+- Tailwind CSS
+- Hardhat contract tooling
+
+## Miniapp Type
+
+- Social reputation
+- Onchain reputation
+- Identity scoring

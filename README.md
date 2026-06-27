@@ -79,3 +79,10 @@ Create a local environment file from the example file:
 ```bash
 cp .env.example .env.local
 ```
+
+Set the contract address and chain ID:
+
+```bash
+NEXT_PUBLIC_CONTRACT_ADDRESS=0xYourDeployedContract
+NEXT_PUBLIC_CHAIN_ID=84532
+```

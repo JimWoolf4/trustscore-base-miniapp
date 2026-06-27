@@ -13,3 +13,10 @@ The project is designed to provide an immediate visible trust signal through wal
 ## Features
 
 - Social reputation scoring for wallet addresses
+- Onchain trust point interactions
+- Wallet identity and credibility display
+- Base miniapp compatibility
+- Native Wagmi configuration
+- Viem-based contract interaction support
+- Tailwind CSS styling
+- Hardhat tooling for contract compilation and deployment

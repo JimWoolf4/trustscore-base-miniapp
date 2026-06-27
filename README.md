@@ -138,3 +138,10 @@ After deployment, update `NEXT_PUBLIC_CONTRACT_ADDRESS` in `.env.local`.
 Then rebuild and redeploy the frontend so the app points to the latest contract.
 
 ## Project Notes
+
+- Keep wallet configuration centralized in `lib/wagmi.ts`.
+- Keep Base App metadata in `app/layout.tsx`.
+- Keep contract address and chain ID values in environment variables.
+- Ensure every relevant contract write includes `dataSuffix`.
+- Verify the selected chain ID matches the deployed contract network.
+- Redeploy the frontend after changing public environment variables.

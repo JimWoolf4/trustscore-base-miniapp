@@ -123,3 +123,10 @@ Compile the smart contract with Hardhat:
 
 ```bash
 npm run compile
+```
+
+## Contract Deployment
+
+Deploy to Base Sepolia:
+
+```bash

@@ -35,3 +35,10 @@ The project is designed to provide an immediate visible trust signal through wal
 - Social reputation
 - Onchain reputation
 - Identity scoring
+- Contract category: onchain reputation score contract
+
+## Wallet Support
+
+The app does not use RainbowKit, WalletConnect, or `getDefaultConfig`.
+
+Wallet connection is configured in `lib/wagmi.ts`.

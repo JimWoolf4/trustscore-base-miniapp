@@ -192,3 +192,13 @@ Key project files include:
 - `lib/wagmi.ts` for wallet and chain configuration
 - Hardhat configuration for contract compilation and deployment
 - Environment variables for public contract configuration
+
+## Maintenance Notes
+
+When updating the project, keep configuration changes explicit and easy to review.
+
+Avoid duplicating wallet or chain settings across multiple files.
+
+Check environment values carefully before deploying to a production network.
+
+Keep the frontend and deployed contract address in sync after every contract deployment.

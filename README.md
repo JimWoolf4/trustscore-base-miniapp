@@ -151,3 +151,13 @@ npm run deploy:base-sepolia
 ```
 
 After deployment, update the contract address in:
+
+```bash
+.env.local
+```
+
+Set the deployed contract address:
+
+```bash
+NEXT_PUBLIC_CONTRACT_ADDRESS=0xYourDeployedContract
+```

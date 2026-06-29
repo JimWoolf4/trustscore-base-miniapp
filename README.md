@@ -80,3 +80,12 @@ The Wagmi configuration includes a hardcoded `dataSuffix` field for the ERC-8021
 
 ```ts
 export const builderCodeDataSuffix = '0x' as `0x${string}`;
+```
+
+Each relevant `writeContract` call should include the configured suffix:
+
+```ts
+dataSuffix: builderCodeDataSuffix
+```
+
+## Environment Setup

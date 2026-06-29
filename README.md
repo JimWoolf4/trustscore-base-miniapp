@@ -18,3 +18,14 @@ The project is designed to provide a clear trust signal through wallet interacti
 - Onchain trust point interactions
 - Wallet identity and credibility display
 - Base miniapp compatibility
+- Native Wagmi configuration
+- Viem-based contract interaction support
+- Tailwind CSS styling
+- Hardhat tooling for contract compilation and deployment
+
+## Tech Stack
+
+- Next.js App Router
+- TypeScript
+- Wagmi native configuration
+- Viem

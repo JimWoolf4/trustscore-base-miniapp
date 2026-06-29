@@ -109,3 +109,13 @@ Use the following chain IDs:
 - `8453` for Base mainnet
 
 The configured TrustScore contract address is intended for deployment on Base mainnet.
+
+## Local Development
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:

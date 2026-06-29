@@ -39,3 +39,13 @@ TrustScoreBaseMiniapp is designed for:
 - Social reputation
 - Onchain reputation
 - Identity scoring
+- Onchain reputation score contracts
+
+## Wallet Support
+
+This project does not use RainbowKit, WalletConnect, or `getDefaultConfig`.
+
+Wallet connection is configured directly in:
+
+```ts
+lib/wagmi.ts

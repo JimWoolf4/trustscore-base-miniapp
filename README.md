@@ -29,3 +29,13 @@ The project is designed to provide a clear trust signal through wallet interacti
 - TypeScript
 - Wagmi native configuration
 - Viem
+- Tailwind CSS
+- Hardhat contract tooling
+
+## Miniapp Category
+
+TrustScoreBaseMiniapp is designed for:
+
+- Social reputation
+- Onchain reputation
+- Identity scoring

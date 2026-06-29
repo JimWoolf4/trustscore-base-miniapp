@@ -141,3 +141,13 @@ Compile the smart contract with Hardhat:
 ```bash
 npm run compile
 ```
+
+## Contract Deployment
+
+Deploy to Base Sepolia:
+
+```bash
+npm run deploy:base-sepolia
+```
+
+After deployment, update the contract address in:

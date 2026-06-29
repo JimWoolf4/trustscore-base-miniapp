@@ -171,3 +171,14 @@ Then rebuild and redeploy the frontend so the app points to the latest contract.
 - Keep contract address and chain ID values in environment variables.
 - Ensure every relevant contract write includes `dataSuffix`.
 - Confirm that the selected chain ID matches the deployed contract network.
+- Redeploy the frontend after changing public environment variables.
+
+## Suggested Workflow
+
+1. Install dependencies.
+2. Create `.env.local` from `.env.example`.
+3. Set the contract address and chain ID.
+4. Run the app locally.
+5. Compile the contract if changes are made.
+6. Deploy the contract to the intended Base network.
+7. Update the frontend environment values.

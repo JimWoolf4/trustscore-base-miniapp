@@ -131,3 +131,13 @@ Open the local app in your browser using the URL printed by Next.js.
 Create a production build:
 
 ```bash
+npm run build
+```
+
+## Contract Compilation
+
+Compile the smart contract with Hardhat:
+
+```bash
+npm run compile
+```

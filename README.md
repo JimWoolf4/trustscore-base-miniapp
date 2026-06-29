@@ -100,3 +100,12 @@ Set the contract address and chain ID:
 
 ```bash
 NEXT_PUBLIC_CONTRACT_ADDRESS=0xYourDeployedContract
+NEXT_PUBLIC_CHAIN_ID=84532
+```
+
+Use the following chain IDs:
+
+- `84532` for Base Sepolia
+- `8453` for Base mainnet
+
+The configured TrustScore contract address is intended for deployment on Base mainnet.

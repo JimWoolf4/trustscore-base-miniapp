@@ -182,3 +182,13 @@ Then rebuild and redeploy the frontend so the app points to the latest contract.
 5. Compile the contract if changes are made.
 6. Deploy the contract to the intended Base network.
 7. Update the frontend environment values.
+8. Build and redeploy the frontend.
+
+## Project Structure Notes
+
+Key project files include:
+
+- `app/layout.tsx` for app-level metadata
+- `lib/wagmi.ts` for wallet and chain configuration
+- Hardhat configuration for contract compilation and deployment
+- Environment variables for public contract configuration

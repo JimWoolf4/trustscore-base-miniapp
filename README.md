@@ -49,3 +49,13 @@ Wallet connection is configured directly in:
 
 ```ts
 lib/wagmi.ts
+```
+
+Supported connection options include:
+
+- `injected()` for the Base App embedded wallet, MetaMask, OKX, and other injected wallets
+- `coinbaseWallet()` for Coinbase Wallet
+
+## Base App Attribution
+
+Offchain attribution is configured in:

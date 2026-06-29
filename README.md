@@ -161,3 +161,13 @@ Set the deployed contract address:
 ```bash
 NEXT_PUBLIC_CONTRACT_ADDRESS=0xYourDeployedContract
 ```
+
+Then rebuild and redeploy the frontend so the app points to the latest contract.
+
+## Usage Notes
+
+- Keep wallet configuration centralized in `lib/wagmi.ts`.
+- Keep Base App metadata in `app/layout.tsx`.
+- Keep contract address and chain ID values in environment variables.
+- Ensure every relevant contract write includes `dataSuffix`.
+- Confirm that the selected chain ID matches the deployed contract network.
